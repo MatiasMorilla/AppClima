@@ -1,0 +1,26 @@
+.location-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr ;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "logo location "
+                         "logo date ";
+}
+
+.location-logo{
+    grid-area: logo;
+}
+
+.location-name{
+    grid-area: location;
+    display: flex;
+    justify-content: flex-start;
+    align-self: start;
+}
+
+.location-date{
+    grid-area: date;
+    display: flex;
+    justify-content: flex-start;
+    align-self: start;
+}
