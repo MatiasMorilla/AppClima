@@ -1,0 +1,18 @@
+.home-container{
+    padding: 20px;
+}
+
+.calendar-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.calendar-container .calendar{
+    color: #0101ee;
+}
+
+.calendar-container p{
+    margin-left: 5px;
+    font-weight: 500;
+}

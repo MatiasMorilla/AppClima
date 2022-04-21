@@ -1,0 +1,23 @@
+.itemDay-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo day deg hidden";
+    border-radius: 10px;
+    background: #303030;
+    color: #fff;
+    margin: 10px 0;
+}
+
+
+.itemDay-logo{
+    grid-area: logo;
+}
+
+.itemDay-day{
+    grid-area: day;
+}
+
+.itemDay-deg{
+    grid-area: deg;
+}

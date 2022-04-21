@@ -1,26 +1,38 @@
 .location-container{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 3fr ;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: .3fr 3fr ;
+    grid-template-rows: 1fr .5fr;
     grid-template-areas: "logo location "
-                         "logo date ";
+                         "hidden date ";
 }
 
 .location-logo{
     grid-area: logo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#000fff;
 }
 
 .location-name{
     grid-area: location;
     display: flex;
     justify-content: flex-start;
-    align-self: start;
+    align-items: center;
+    font-weight: 700;
 }
 
 .location-date{
     grid-area: date;
     display: flex;
     justify-content: flex-start;
-    align-self: start;
+    align-items: start;
+    font-size: 12px;
+    color:#7a7979;
+}
+
+.location-name  p,
+.location-date  p{
+    margin:0 0 5px 5px;
 }
