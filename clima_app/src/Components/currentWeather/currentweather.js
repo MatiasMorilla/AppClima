@@ -3,7 +3,11 @@ import './currentweather.css';
 //MUI
 import LightModeIcon from '@mui/icons-material/LightMode';
 
-const CurrentWeather = () => {
+const CurrentWeather = ({cityWeather}) => {
+    const temp_max = cityWeather.main.temp_max;
+    const temp_min = cityWeather.main.temp_min;
+
+
     return(
         <div className='cw-container'>
             <div className='cw-logo'>
@@ -13,7 +17,7 @@ const CurrentWeather = () => {
                 <p>Clima actual</p>
             </div>
             <div className='cw-deg'>
-                <p>28/13c</p>
+                <p>{temp_max}/ {temp_min} °C</p>
             </div>
             <div className='cw-footer'>
                 <p>Soleado</p>

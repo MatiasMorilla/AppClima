@@ -2,19 +2,21 @@ import './location.css';
 // MUI
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-const Location = () => {
+const Location = ({cityWeather}) => {
+    const date = new Date();
+
     return(
         <div className='location-container'>
             <div className='location-logo'>
                 <LocationOnIcon />
             </div>
             <div className='location-name'>
-                <p>Ciudad de La Plata |</p>
-                <p>Argentina</p>
+                <p>{cityWeather.name} |</p>
+                <p>{cityWeather.sys.country} </p>
             </div>
             <div className='location-date'>
-                <p>Dia:18/08/2022 |</p>
-                <p>Hora actual: 11:55</p>
+                <p>Dia: {date.toLocaleDateString()} |</p>
+                <p>Hora actual: {date.toLocaleTimeString()}</p>
             </div>
         </div>
     );
