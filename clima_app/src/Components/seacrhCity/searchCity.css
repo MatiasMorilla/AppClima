@@ -1,0 +1,16 @@
+.searchCity-container{
+    padding: 30px 0;
+    height: 100vh;
+    background-image: url('../../assets/mundo.png');
+    background-position: center;
+    background-size: cover;
+}
+
+
+.searchCity-form{
+    width: 80%;
+    margin: 0px auto;
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+}

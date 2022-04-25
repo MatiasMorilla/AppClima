@@ -4,8 +4,8 @@ import './currentweather.css';
 import LightModeIcon from '@mui/icons-material/LightMode';
 
 const CurrentWeather = ({cityWeather}) => {
-    const temp_max = cityWeather.main.temp_max;
-    const temp_min = cityWeather.main.temp_min;
+    const temp_max = parseInt(cityWeather.main.temp_max - 273.15);
+    const temp_min = parseInt(cityWeather.main.temp_min - 273.15);
 
 
     return(
