@@ -16,9 +16,8 @@
     align-items: center;
 }
 
-.cw-logo .sun{
-    font-size: 50px;
-    color:#eeff00;
+.cw-logo .weather-icon{
+    width: 100%;
 }
 
 .cw-header{

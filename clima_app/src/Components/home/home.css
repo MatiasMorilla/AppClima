@@ -2,6 +2,14 @@
     padding: 20px;
 }
 
+.home-container .btn-addCity{
+    position: absolute;
+    left: 80%;
+    top: 8px;
+    font-size: 30px;
+    padding: 0;
+}
+
 .calendar-container{
     display: flex;
     justify-content: flex-start;

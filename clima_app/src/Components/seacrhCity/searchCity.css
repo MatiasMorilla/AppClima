@@ -14,3 +14,8 @@
     display: flex;
     align-items: center;
 }
+
+.searchCity-container .searchCity-form .input-city{
+    margin-left: 10px;
+    flex: 1;
+}
