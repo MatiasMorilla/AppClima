@@ -38,6 +38,15 @@
     align-items: center;
 }
 
+.cw-deg p{
+    font-size: 24px;
+}
+
+
+.cw-deg span{
+    font-size: 18px;
+}
+
 .cw-footer{
     grid-area: footer;
     font-weight: 700;
@@ -45,6 +54,10 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.cw-footer p::first-letter{
+    text-transform: uppercase;
 }
 
 .cw-deg p,
