@@ -14,20 +14,10 @@ const apiKey = '311d43f885c66e8775d0a5959c5fd9b4';
 
 const Home = () => {
     const [cityWeather, setCityWeather] = useState({});
-    const [cities, setCities] = useState([]);
     const [latitude, setLatitude] = useState(1);
     const [longitude, setLongitude] = useState(1);
     const {cityName} = useParams();
 
-
-    const getCitiesApi = async () => {
-        let url = "http://battuta.medunes.net/api/region/af/all/?key=40e9ba0de8018b791cad8223b206bb0e";
-        let res = await fetch(url, {mode: 'no-cors'});
-        let data = await res.json();
-        console.log(data);
-        setCities(data);
-    }
-    
     const getDataApi = async () => {
         let url = "";
         if(cityName)
@@ -48,7 +38,6 @@ const Home = () => {
 
     useEffect( () => {
         getDataApi();
-        getCitiesApi();
     },[latitude, longitude]);
 
     return(
@@ -61,7 +50,6 @@ const Home = () => {
                             navigator.geolocation.getCurrentPosition( (position) =>{
                                 setLatitude(parseInt(position.coords.latitude));
                                 setLongitude(parseInt(position.coords.longitude));
-                                console.log(cities);
                             })
                         }
                         <Link to={"/SearchCity"}>
