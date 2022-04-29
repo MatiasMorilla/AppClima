@@ -1,18 +1,19 @@
 import './itemDay.css';
-//MUI
-import LightModeIcon from '@mui/icons-material/LightMode';
 
-const ItemDay = () => {
+const ItemDay = ({day, temp_max, temp_min, icon}) => {
     return(
         <div className='itemDay-container'>
-            <div className='itemDat-logo'>
-                <LightModeIcon />
+            <div className='itemDay-logo'>
+                <img 
+                    src={`https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/` + icon + `.png`}
+                    className='weather-icon'
+                />
             </div>
-            <div className='itemDat-day'>
-                Lunes
+            <div className='itemDay-day'>
+                {day}  
             </div>
-            <div className='itemDat-deg'>
-                24/15c
+            <div className='itemDay-deg'>
+                <p>{temp_max}<span>/{temp_min} °C</span></p>
             </div>
         </div>
     );

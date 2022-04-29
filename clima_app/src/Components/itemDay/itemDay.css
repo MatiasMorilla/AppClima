@@ -12,12 +12,30 @@
 
 .itemDay-logo{
     grid-area: logo;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.itemDay-logo .weather-icon{
+    width: 45%;
 }
 
 .itemDay-day{
     grid-area: day;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .itemDay-deg{
     grid-area: deg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemDay-deg p{
+    margin: 0;
 }

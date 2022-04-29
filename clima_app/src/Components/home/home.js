@@ -14,11 +14,20 @@ const apiKey = '311d43f885c66e8775d0a5959c5fd9b4';
 
 const Home = () => {
     const [cityWeather, setCityWeather] = useState({});
+    const [cities, setCities] = useState([]);
     const [latitude, setLatitude] = useState(1);
     const [longitude, setLongitude] = useState(1);
     const {cityName} = useParams();
 
 
+    const getCitiesApi = async () => {
+        let url = "http://battuta.medunes.net/api/region/af/all/?key=40e9ba0de8018b791cad8223b206bb0e";
+        let res = await fetch(url, {mode: 'no-cors'});
+        let data = await res.json();
+        console.log(data);
+        setCities(data);
+    }
+    
     const getDataApi = async () => {
         let url = "";
         if(cityName)
@@ -39,6 +48,7 @@ const Home = () => {
 
     useEffect( () => {
         getDataApi();
+        getCitiesApi();
     },[latitude, longitude]);
 
     return(
@@ -51,6 +61,7 @@ const Home = () => {
                             navigator.geolocation.getCurrentPosition( (position) =>{
                                 setLatitude(parseInt(position.coords.latitude));
                                 setLongitude(parseInt(position.coords.longitude));
+                                console.log(cities);
                             })
                         }
                         <Link to={"/SearchCity"}>
@@ -66,13 +77,13 @@ const Home = () => {
                                 Prevision semanal
                             </p>
                         </div>
-                        <ItemDay />
-                        <ItemDay />
-                        <ItemDay />
-                        <ItemDay />
-                        <ItemDay />
-                        <ItemDay />
-                        <ItemDay />
+                        <ItemDay day={"Lunes"} temp_max={20} temp_min={15} icon={"01d"}/>
+                        <ItemDay day={"Martes"} temp_max={22} temp_min={10} icon={"02d"}/>
+                        <ItemDay day={"Miercoles"} temp_max={15} temp_min={6} icon={"03d"}/>
+                        <ItemDay day={"Jueves"} temp_max={28} temp_min={20} icon={"04d"}/>
+                        <ItemDay day={"Viernes"} temp_max={25} temp_min={23} icon={"02d"}/>
+                        <ItemDay day={"Sabado"} temp_max={13} temp_min={10} icon={"01d"}/>
+                        <ItemDay day={"Domingo"} temp_max={5} temp_min={0} icon={"04d"}/>
                     </div>
                 )
                 :
